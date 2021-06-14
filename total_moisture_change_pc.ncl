@@ -32,7 +32,8 @@
 	
 	Mean	= Mean*24.*3600./Po*100./dt
 	Mean	= runave_n_Wrap(runave_n_Wrap(Mean,6,2,0),6,2,1)
-	;wks	= gsn_open_wks("eps","detat")
+	
+	
 	wks	= gsn_open_wks("png","JJA_PC_Trend_CMIP6_e-p")
 	gsn_define_colormap(wks,"BlueWhiteOrangeRed")
 	gsn_reverse_colormap(wks)	
@@ -126,10 +127,6 @@
                          	       gsn_polymarker(wks,plot,lon(j),lat(i),res1)
 				end if
 			end do
-			;if (MASK .eq. False .and. ismissing(Mean(i,j)) .eq. False .and. ismissing(Raw(0,i,j)) .eq. False) then
-                         ;       gsn_polymarker(wks,plot,lon(j),lat(i),res1)
-                                   ;print("robust")
-                        ;end if
 		end do
 	end do
 	frame(wks)

@@ -33,8 +33,6 @@
 	print(avg(DIV))
 	
 	wks	= gsn_open_wks("png","PC_Trend_grad_dq_vhis_JJA")
-	;wks	= gsn_open_wks("eps","Jet_DJF")
-	;gsn_define_colormap(wks,"BlAqGrWh2YeOrReVi22")
 	gsn_define_colormap(wks,"BlueWhiteOrangeRed")
 	gsn_reverse_colormap(wks)
 	
@@ -107,17 +105,10 @@
                          	       gsn_polymarker(wks,plot,lon(j),lat(i),res1)
 				end if
 			end do
-			;if (MASK .eq. False .and. ismissing(Mean(i,j)) .eq. False .and. ismissing(Raw(0,i,j)) .eq. False) then
-                         ;       gsn_polymarker(wks,plot,lon(j),lat(i),res1)
-                                   ;print("robust")
-                        ;end if
 		end do
 	end do
 	frame(wks)
 
-	;system("rm Mean_QV.nc")
-	;ff	= addfile("Mean_QV.nc","c")
-	;ff->dDIV	= dDIV
 
 
 
